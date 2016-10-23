@@ -1,10 +1,10 @@
-﻿/*
+/*
  * Author: Isaiah Mann
  * Descriptioin: Generic class to represent serialized data (works in tandem with JsonUtility to load an array of serialized instances)
  */
 
 [System.Serializable]
-public class SerializlableDataCollection<T> {
+public class SerializableDataCollection<T> {
 
 	public T[] Elements;
 	public int Count {
