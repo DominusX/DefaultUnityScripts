@@ -14,6 +14,12 @@ using System.Collections.Generic;
 public class AudioController : Controller, IAudioController {
 	public bool isAudioListener = true;
 
+	// For controlling music
+	[SerializeField]
+	bool playMusicOnInit;
+	[SerializeField]
+	string mainMusicEventName;
+
 	// Singleton implementation
 	public static AudioController Instance;
 
@@ -160,6 +166,9 @@ public class AudioController : Controller, IAudioController {
 			PreloadFiles(fileList.Files);
 			// TODO: Enable after tracks have been delivered
 			// initCyclingAudio();
+			if (playMusicOnInit) {
+				playMainMusic();
+			}
 		}
 	}
 
@@ -228,6 +237,10 @@ public class AudioController : Controller, IAudioController {
 	protected void UnsubscribeEvents () {
 		base.UnusbscribeEvents();
 		EventController.OnAudioEvent -= HandleAudioEvent;
+	}
+
+	void playMainMusic () {
+		EventController.Event(mainMusicEventName);
 	}
 
 	void HandleAudioEvent (AudioActionType actionType, AudioType audioType) {
