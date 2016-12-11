@@ -1,12 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Reflection;
 
 public class SingletonController<T> : Controller where T : class {
 	public static T Instance;
-
+	protected bool dontDestroyOnLoad = false;
 	protected override void SetReferences () {
-		if (tryInit(ref Instance, this as T, gameObject)) {
+		if (tryInit(ref Instance, this as T, gameObject, dontDestroyOnLoad)) {
 			base.SetReferences ();
 		}
 	}
