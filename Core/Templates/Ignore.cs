@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ignore : MannBehaviour {
+public class Ignore : MonoBehaviourExtended {
 	public bool ColorChange;
 
 	protected override void CleanupReferences () {

@@ -24,7 +24,7 @@ public static class SettingsUtil {
 		);
 	}
 
-	public static void ToggleMusicMuted () {
+	public static void to () {
 		ToggleMusicMuted(!MusicMuted);
 	}
 

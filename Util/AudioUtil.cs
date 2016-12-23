@@ -27,16 +27,16 @@ public static class AudioUtil {
 	}
 
 	public static AudioType AudioTypeFromString (string audioType) {
-
 		switch (audioType) {
 
-		case "FX":
+		case "SFX":
 			return AudioType.FX;
 		case "Music":
 			return AudioType.Music;
 		case "VO":
 			return AudioType.VO;
 		default:
+			Debug.LogError(audioType + " DNE");
 			throw new System.Collections.Generic.KeyNotFoundException();
 		}
 	}

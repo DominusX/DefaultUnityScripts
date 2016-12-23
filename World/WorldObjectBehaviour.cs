@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WorldObjectBehaviour : MannBehaviour {
+public class WorldObjectBehaviour : MonoBehaviourExtended {
 	protected Renderer[] _renderers;
 	protected bool [] ignoreColorChanges; // Parallel array to renderers
 

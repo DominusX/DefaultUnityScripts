@@ -5,7 +5,7 @@
 
 using UnityEngine;
 
-public abstract class Controller : MannBehaviour {
+public abstract class Controller : MonoBehaviourExtended {
 	protected override void SetReferences () {
 		// Nothing
 	}
